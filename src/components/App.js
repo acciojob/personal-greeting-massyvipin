@@ -2,8 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import './../styles/App.css';
 
-const App = () => {
-  const Greeting = () => {
+const Greeting = () => {
   // Initialize states for name input and greeting message
   const [name, setName] = useState('');
   const [greeting, setGreeting] = useState('');
@@ -21,6 +20,7 @@ const App = () => {
       setGreeting(`Hello, ${name}!`);
     }
   };
+
   return (
     <div>
       <input
@@ -35,8 +35,12 @@ const App = () => {
   );
 };
 
-export default Greeting;
-  )
-}
+const App = () => {
+  return (
+    <div>
+      <Greeting />
+    </div>
+  );
+};
 
-export default App
+export default App;
