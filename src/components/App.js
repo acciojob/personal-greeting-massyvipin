@@ -4,12 +4,12 @@ import './../styles/App.css';
 
 const Greeting = () => {
   // Initialize states for name input and greeting message
-  const [name, setName] = useState('');
+  const [n, setn] = useState('');
   const [greeting, setGreeting] = useState('');
 
   // Handle input change
   const handleChange = (event) => {
-    setName(event.target.value);
+    setn(event.target.value);
   };
 
   // Handle submit button click
@@ -17,7 +17,7 @@ const Greeting = () => {
     if (name.trim() === '') {
       setGreeting('Please enter your name.');
     } else {
-      setGreeting(`Hello, ${name}!`);
+      setGreeting(`Hello, ${n}!`);
     }
   };
 
@@ -25,7 +25,7 @@ const Greeting = () => {
     <div>
       <input
         type="text"
-        value={name}
+        value={n}
         onChange={handleChange}
         placeholder="Enter your name"
       />
