@@ -3,7 +3,7 @@ import { useState } from "react";
 import './../styles/App.css';
 
 const App = () => {
-const Greeting = () => {
+  const Greeting = () => {
   // Initialize states for name input and greeting message
   const [name, setName] = useState('');
   const [greeting, setGreeting] = useState('');
@@ -21,7 +21,6 @@ const Greeting = () => {
       setGreeting(`Hello, ${name}!`);
     }
   };
-
   return (
     <div>
       <input
