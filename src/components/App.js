@@ -1,46 +1,24 @@
-import React from 'react';
-import { useState } from "react";
+import React,{useState} from "react";
 import './../styles/App.css';
 
-const Greeting = () => {
-  // Initialize states for name input and greeting message
-  const [Name, setName] = useState('');
-  const [greeting, setGreeting] = useState('');
-
-  // Handle input change
-  const handleChange = (event) => {
-    setName(event.target.value);
-  };
-
-  // Handle submit button click
-  const handleSubmit = () => {
-    if (Name.trim() === '') {
-      setGreeting('Please enter your name.');
-    } else {
-      setGreeting(`Hello, ${Name}!`);
-    }
-  };
-
-  return (
-    <div>
-      <input
-        type="text"
-        value={Name}
-        onChange={handleChange}
-        placeholder="Enter your name"
-      />
-      <button onClick={handleSubmit}>Submit</button>
-      <p>{greeting}</p>
-    </div>
-  );
-};
-
 const App = () => {
+  const [input,setInput] = useState('');
+  const onInput = (e)=>{
+      const {value} = e.target
+    setInput(value)
+  }
+  const onClear = ()=>{
+    setInput('')
+  }
   return (
     <div>
-      <Greeting />
+        {/* Do not remove the main div */}
+      <p>Enter your name:</p>
+    <input value={input} onChange={onInput} />
+    {!!input.length&&<p>Hello {input}!</p>}
+    <button onClick={onClear}>Clear</button>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
